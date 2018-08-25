@@ -1,0 +1,108 @@
+-------------------------------------------------------------------------------
+Test set: executor.TestExecutor
+-------------------------------------------------------------------------------
+Tests run: 57, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 144.253 sec <<< FAILURE!
+Then Add New page should be displayed(| Firefox |)  Time elapsed: 0.006 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Unable to locate element: //div[text()='Add Property']
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'LIVINGLEGEND', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_101'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 10436, moz:profile: C:\Users\Balaji\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 6.3, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 485eea1b-fc96-434a-86cb-b20cd0342220
+*** Element info: {Using=xpath, value=//div[text()='Add Property']}
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at stepdefnition.PropertyWorkflowmanagement.add_New_page_should_be_displayed(PropertyWorkflowmanagement.java:85)
+	at ?.Then Add New page should be displayed(02CreateEditListProperties.feature:8)
+
+| Firefox |  Time elapsed: 0.008 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Unable to locate element: //div[text()='Add Property']
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'LIVINGLEGEND', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_101'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 10436, moz:profile: C:\Users\Balaji\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 6.3, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 485eea1b-fc96-434a-86cb-b20cd0342220
+*** Element info: {Using=xpath, value=//div[text()='Add Property']}
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at stepdefnition.PropertyWorkflowmanagement.add_New_page_should_be_displayed(PropertyWorkflowmanagement.java:85)
+	at ?.Then Add New page should be displayed(02CreateEditListProperties.feature:8)
+
+Then request should not be posted(Scenario: User should not create duplicate property)  Time elapsed: 0 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: expected:<false> but was:<true>
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.failNotEquals(Assert.java:329)
+	at junit.framework.Assert.assertEquals(Assert.java:78)
+	at junit.framework.Assert.assertEquals(Assert.java:174)
+	at junit.framework.Assert.assertEquals(Assert.java:181)
+	at stepdefnition.Add_Edit_List.request_should_not_be_posted(Add_Edit_List.java:106)
+	at ?.Then request should not be posted(02CreateEditListProperties.feature:33)
+
+Scenario: User should not create duplicate property  Time elapsed: 0 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: expected:<false> but was:<true>
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.failNotEquals(Assert.java:329)
+	at junit.framework.Assert.assertEquals(Assert.java:78)
+	at junit.framework.Assert.assertEquals(Assert.java:174)
+	at junit.framework.Assert.assertEquals(Assert.java:181)
+	at stepdefnition.Add_Edit_List.request_should_not_be_posted(Add_Edit_List.java:106)
+	at ?.Then request should not be posted(02CreateEditListProperties.feature:33)
+
+Then the property should be created(| 10 |)  Time elapsed: 0.002 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Unable to locate element: //td[contains(text(),'TestAutomation_20180824222629568')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'LIVINGLEGEND', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_101'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 11356, moz:profile: C:\Users\Balaji\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 6.3, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 8b3f6b42-57cc-4d38-a498-4f9246a8ca15
+*** Element info: {Using=xpath, value=//td[contains(text(),'TestAutomation_20180824222629568')]}
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at stepdefnition.PropertyWorkflowmanagement.the_property_should_be_created(PropertyWorkflowmanagement.java:122)
+	at ?.Then the property should be created(02CreateEditListProperties.feature:42)
+
+| 10 |  Time elapsed: 0.004 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Unable to locate element: //td[contains(text(),'TestAutomation_20180824222629568')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'LIVINGLEGEND', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_101'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 11356, moz:profile: C:\Users\Balaji\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 6.3, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 8b3f6b42-57cc-4d38-a498-4f9246a8ca15
+*** Element info: {Using=xpath, value=//td[contains(text(),'TestAutomation_20180824222629568')]}
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at stepdefnition.PropertyWorkflowmanagement.the_property_should_be_created(PropertyWorkflowmanagement.java:122)
+	at ?.Then the property should be created(02CreateEditListProperties.feature:42)
+
+Then the property should be created(| 10 |)  Time elapsed: 0.001 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Unable to locate element: //td[contains(text(),'TestAutomation_20180824222654504')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'LIVINGLEGEND', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_101'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 11496, moz:profile: C:\Users\Balaji\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 6.3, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 1ee4a9d5-7df8-4683-959a-108f5cd95bc7
+*** Element info: {Using=xpath, value=//td[contains(text(),'TestAutomation_20180824222654504')]}
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at stepdefnition.PropertyWorkflowmanagement.the_property_should_be_created(PropertyWorkflowmanagement.java:122)
+	at ?.Then the property should be created(03StressTesting.feature:11)
+
+| 10 |  Time elapsed: 0.001 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Unable to locate element: //td[contains(text(),'TestAutomation_20180824222654504')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'LIVINGLEGEND', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_101'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 11496, moz:profile: C:\Users\Balaji\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 6.3, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 1ee4a9d5-7df8-4683-959a-108f5cd95bc7
+*** Element info: {Using=xpath, value=//td[contains(text(),'TestAutomation_20180824222654504')]}
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at stepdefnition.PropertyWorkflowmanagement.the_property_should_be_created(PropertyWorkflowmanagement.java:122)
+	at ?.Then the property should be created(03StressTesting.feature:11)
+

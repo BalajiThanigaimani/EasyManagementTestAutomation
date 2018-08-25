@@ -1,0 +1,1772 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Easy Property Management Test Report</title>
+
+	<style type='text/css'>
+			
+      
+        
+      
+		
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1)" view='testrunner-logs-view'><i class='material-icons'>note</i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'></span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Aug 24, 2018 10:24:45 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@PropertyWorkFlowManagement</a></li>
+					<li><a href='#'>@E2E</a></li>
+					<li><a href='#'>@List_Create_Edit_Properties</a></li>
+					<li><a href='#'>@CancelFunctionality</a></li>
+					<li><a href='#'>@PropertyActions</a></li>
+					<li><a href='#'>@Regression</a></li>
+					<li><a href='#'>@Verify_Add_new_page_displayed</a></li>
+					<li><a href='#'>@ListProperty</a></li>
+					<li><a href='#'>@API</a></li>
+					<li><a href='#'>@AddProperty</a></li>
+					<li><a href='#'>@AddDuplicateProperty</a></li>
+					<li><a href='#'>@stress</a></li>
+					<li><a href='#'>@AddPropertywith</a></li>
+					<li><a href='#'>@Stress</a></li>
+					<li><a href='#'>@StressTestwithLargeData</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Features</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='33.333%'><span class='strong'>1</span> feature(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='66.667%'>2</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Scenarios</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='55.556%'><span class='strong'>5</span> scenario(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='44.444%'>4</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='91.667%'><span class='strong'>44</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='8.333%'>4</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Features</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>To validate the E2E Workflows flows for Property Management</span>
+						<span class='test-time'>Aug 24, 2018 10:24:45 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='2' status='pass'>
+	<span class='duration right label'>0h 0m 29s+122ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Verify if the user is able to create and edit the property</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='3' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@E2E</span>
+				<span class='category label white-text'>@PropertyWorkFlowManagement</span>
+				<span class='category label white-text'>@List_Create_Edit_Properties</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Verify if the user is able to create and edit the property</span>
+			
+				<ul class='steps'>
+					<li test-id='4' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given the user open the Easy property Management application in Firefox</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='5' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When the user clicks Add New Button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='6' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When the user enters the unique property name and address</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='7' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click Ok button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='8' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then the property should be created</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href=".\Screenshots\20180824222459004.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>TestAutomation_20180824222458113 is created. please refer the screenshot</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='9' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When the user click the Edit button for the created property</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='10' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then Edit New page should be displayed</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='11' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When the user enters the updated property name and address</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='12' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click Ok button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='13' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then the property should be updated</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href=".\Screenshots\20180824222501004.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>TestAutomation_20180824222458113Edit is updated. please refer the screenshot</div>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='14' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@E2E</span>
+				<span class='category label white-text'>@PropertyWorkFlowManagement</span>
+				<span class='category label white-text'>@List_Create_Edit_Properties</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Verify if the user is able to create and edit the property</span>
+			
+				<ul class='steps'>
+					<li test-id='15' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given the user open the Easy property Management application in Chrome</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='16' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When the user clicks Add New Button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='17' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When the user enters the unique property name and address</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='18' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click Ok button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='19' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then the property should be created</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href=".\Screenshots\20180824222512004.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>TestAutomation_20180824222510638 is created. please refer the screenshot</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='20' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When the user click the Edit button for the created property</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='21' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then Edit New page should be displayed</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='22' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When the user enters the updated property name and address</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='23' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click Ok button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='24' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then the property should be updated</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href=".\Screenshots\20180824222514004.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>TestAutomation_20180824222510638Edit is updated. please refer the screenshot</div>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='25' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@CancelFunctionality</span>
+	</div>
+	<span class='duration right label'>0h 0m 23s+72ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify if the user does not create the property if the cancel is selected in Add new page</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='26' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given the user open the Easy property Management application</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='27' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When the user clicks Add New Button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='28' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And the user enters the  property name and address</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='29' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click Cancel button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='30' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then the property should not be created</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href=".\Screenshots\20180824222538004.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>TestAutomation_20180824222526728 is not created. please refer the screenshot</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='31'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify different actions like Add/list in</span>
+						<span class='test-time'>Aug 24, 2018 10:25:40 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='32' status='fail'>
+	<span class='duration right label'>0h 0m 21s+660ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Verify if the user is able to create and edit the property</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='33' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@PropertyActions</span>
+				<span class='category label white-text'>@Verify_Add_new_page_displayed</span>
+				<span class='category label white-text'>@Regression</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Verify if the user is able to create and edit the property</span>
+			
+				<ul class='steps'>
+					<li test-id='34' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given the user open the Easy property Management application in Firefox</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='35' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When the user clicks Add New Button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='36' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then Add New page should be displayed</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href=".\Screenshots\20180824222601004.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>Add New Page text is not found in Dailog box</div>
+							<div class='pre'>Unable to locate element: //div[text()='Add Property']
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'LIVINGLEGEND', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_101'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 10436, moz:profile: C:\Users\Balaji\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 6.3, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 485eea1b-fc96-434a-86cb-b20cd0342220
+*** Element info: {Using=xpath, value=//div[text()='Add Property']}</div>
+							<div class='pre'><pre>junit.framework.AssertionFailedError: Unable to locate element: //div[text()='Add Property']
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'LIVINGLEGEND', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_101'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 10436, moz:profile: C:\Users\Balaji\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 6.3, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 485eea1b-fc96-434a-86cb-b20cd0342220
+*** Element info: {Using=xpath, value=//div[text()='Add Property']}
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at stepdefnition.PropertyWorkflowmanagement.add_New_page_should_be_displayed(PropertyWorkflowmanagement.java:85)
+	at ?.Then Add New page should be displayed(02CreateEditListProperties.feature:8)
+</pre></div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='37' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@ListProperty</span>
+	</div>
+	<span class='duration right label'>0h 0m 14s+133ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify if all the properties are listed in GUI</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='38' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given get the list of property details from API</span>
+				<div class='pre'><a href='./ResponseFiles/20180824222606004.json'>Response Output</a></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='39' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user open the Easy property Management application</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='40' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then All the properties should be displayed</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href=".\Screenshots\20180824222615004.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>List is displayed please refer the screenshot</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenariooutline node' test-id='41' status='pass'>
+	<span class='duration right label'>0h 0m 0s+515ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">User should able to add new properties via API</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='42' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@PropertyActions</span>
+				<span class='category label white-text'>@API</span>
+				<span class='category label white-text'>@Regression</span>
+				<span class='category label white-text'>@AddProperty</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">User should able to add new properties via API</span>
+			
+				<ul class='steps'>
+					<li test-id='43' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given we submit 2 properties by API</span>
+							<div class='pre'>Property name = TestAutomation_2018082422261811 address =8000 Jones Branch</div>
+							<div class='pre'>Property name = TestAutomation_20180824222618231 address =8000 Jones Branch</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='44' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then request should be posted sucessfully</span>
+							<div class='pre'><a href='./ResponseFiles/20180824222618004.json'>Response Output</a></div>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='45' status='fail'>
+	<div class='category-list'>
+		<span class='category label white-text'>@AddDuplicateProperty</span>
+		<span class='category label white-text'>@API</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+200ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User should not create duplicate property</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='46' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given take a property which already exists</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='47' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When the user post a  duplicate property via API</span>
+				<div class='pre'>Property name = Emerald Towers address =42 Wallaby Way, Sydney</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='48' class='node then fail' status='fail'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then request should not be posted</span>
+				<div class='pre'>Duplicate Property details are added , please refer the response file</div>
+				<div class='pre'><a href='./ResponseFiles/20180824222618004.json'>Response Output</a></div>
+				<div class='pre'><textarea>junit.framework.AssertionFailedError: expected:<false> but was:<true>
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.failNotEquals(Assert.java:329)
+	at junit.framework.Assert.assertEquals(Assert.java:78)
+	at junit.framework.Assert.assertEquals(Assert.java:174)
+	at junit.framework.Assert.assertEquals(Assert.java:181)
+	at stepdefnition.Add_Edit_List.request_should_not_be_posted(Add_Edit_List.java:106)
+	at ?.Then request should not be posted(02CreateEditListProperties.feature:33)
+</textarea></div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenariooutline node' test-id='49' status='fail'>
+	<span class='duration right label'>0h 0m 22s+528ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Validate if user is able to create new property, if the application is preloaded with large volume of property details</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='50' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@stress</span>
+				<span class='category label white-text'>@PropertyActions</span>
+				<span class='category label white-text'>@Regression</span>
+				<span class='category label white-text'>@AddPropertywith</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Validate if user is able to create new property, if the application is preloaded with large volume of property details</span>
+			
+				<ul class='steps'>
+					<li test-id='51' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given the system contains 10 properties</span>
+							<div class='pre'>No of Properties already exist in the system = 7</div>
+							<div class='pre'>Total No of properties requested to be added for stress testing = 10</div>
+							<div class='pre'>Total No of new properties will be created = 3</div>
+							<div class='pre'>Property name = TestAutomation_20180824222618872 address =8000 Jones Branch</div>
+							<div class='pre'>Property name = TestAutomation_20180824222618943 address =8000 Jones Branch</div>
+							<div class='pre'>Property name = TestAutomation_20180824222618959 address =8000 Jones Branch</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='52' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user open the Easy property Management application</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='53' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And the user clicks Add New Button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='54' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When the user enters the unique property name and address</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='55' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click Ok button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='56' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then the property should be created</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href=".\Screenshots\20180824222631004.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>TestAutomation_20180824222629568 is not created. please refer the screenshot</div>
+							<div class='pre'><pre>junit.framework.AssertionFailedError: Unable to locate element: //td[contains(text(),'TestAutomation_20180824222629568')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'LIVINGLEGEND', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_101'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 11356, moz:profile: C:\Users\Balaji\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 6.3, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 8b3f6b42-57cc-4d38-a498-4f9246a8ca15
+*** Element info: {Using=xpath, value=//td[contains(text(),'TestAutomation_20180824222629568')]}
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at stepdefnition.PropertyWorkflowmanagement.the_property_should_be_created(PropertyWorkflowmanagement.java:122)
+	at ?.Then the property should be created(02CreateEditListProperties.feature:42)
+</pre></div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='57'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify different actions like Add/list in</span>
+						<span class='test-time'>Aug 24, 2018 10:26:43 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='58' status='fail'>
+	<span class='duration right label'>0h 0m 22s+986ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Validate if user is able to create new property, if the application is preloaded with large volume of property details</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='59' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@StressTestwithLargeData</span>
+				<span class='category label white-text'>@Stress</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Validate if user is able to create new property, if the application is preloaded with large volume of property details</span>
+			
+				<ul class='steps'>
+					<li test-id='60' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given the system contains 10 properties</span>
+							<div class='pre'>No of Properties already exist in the system = 10</div>
+							<div class='pre'>Total No of properties requested to be added for stress testing = 10</div>
+							<div class='pre'>So no new properties are added</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='61' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user open the Easy property Management application</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='62' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And the user clicks Add New Button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='63' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When the user enters the unique property name and address</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='64' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click Ok button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='65' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then the property should be created</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href=".\Screenshots\20180824222656004.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>TestAutomation_20180824222654504 is not created. please refer the screenshot</div>
+							<div class='pre'><pre>junit.framework.AssertionFailedError: Unable to locate element: //td[contains(text(),'TestAutomation_20180824222654504')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'LIVINGLEGEND', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_101'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 11496, moz:profile: C:\Users\Balaji\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 6.3, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 1ee4a9d5-7df8-4683-959a-108f5cd95bc7
+*** Element info: {Using=xpath, value=//td[contains(text(),'TestAutomation_20180824222654504')]}
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at stepdefnition.PropertyWorkflowmanagement.the_property_should_be_created(PropertyWorkflowmanagement.java:122)
+	at ?.Then the property should be created(03StressTesting.feature:11)
+</pre></div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@PropertyWorkFlowManagement</span>
+						<span class='category-status right'>
+							<span class='label pass'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 3</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:24:45 PM</td>
+										<td class='linked' test-id='1'>To validate the E2E Workflows flows for Property Management</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2018 10:24:45 PM</td>
+										<td class='linked' test-id='3'>To validate the E2E Workflows flows for Property Management.Verify if the user is able to create and edit the property.Verify if the user is able to create and edit the property</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2018 10:25:04 PM</td>
+										<td class='linked' test-id='14'>To validate the E2E Workflows flows for Property Management.Verify if the user is able to create and edit the property.Verify if the user is able to create and edit the property</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@E2E</span>
+						<span class='category-status right'>
+							<span class='label pass'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 3</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:24:45 PM</td>
+										<td class='linked' test-id='1'>To validate the E2E Workflows flows for Property Management</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2018 10:24:45 PM</td>
+										<td class='linked' test-id='3'>To validate the E2E Workflows flows for Property Management.Verify if the user is able to create and edit the property.Verify if the user is able to create and edit the property</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2018 10:25:04 PM</td>
+										<td class='linked' test-id='14'>To validate the E2E Workflows flows for Property Management.Verify if the user is able to create and edit the property.Verify if the user is able to create and edit the property</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@List_Create_Edit_Properties</span>
+						<span class='category-status right'>
+							<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:24:45 PM</td>
+										<td class='linked' test-id='3'>To validate the E2E Workflows flows for Property Management.Verify if the user is able to create and edit the property.Verify if the user is able to create and edit the property</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2018 10:25:04 PM</td>
+										<td class='linked' test-id='14'>To validate the E2E Workflows flows for Property Management.Verify if the user is able to create and edit the property.Verify if the user is able to create and edit the property</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@CancelFunctionality</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:25:15 PM</td>
+										<td class='linked' test-id='25'>To validate the E2E Workflows flows for Property Management.Verify if the user does not create the property if the cancel is selected in Add new page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@PropertyActions</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+							<span class='label fail'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							<span class='label red lighten-1 white-text'>Failed: 3</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:25:40 PM</td>
+										<td class='linked' test-id='31'>Verify different actions like Add/list in</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2018 10:25:40 PM</td>
+										<td class='linked' test-id='33'>Verify different actions like Add/list in.Verify if the user is able to create and edit the property.Verify if the user is able to create and edit the property</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2018 10:26:18 PM</td>
+										<td class='linked' test-id='42'>Verify different actions like Add/list in.User should able to add new properties via API.User should able to add new properties via API</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2018 10:26:18 PM</td>
+										<td class='linked' test-id='50'>Verify different actions like Add/list in.Validate if user is able to create new property, if the application is preloaded with large volume of property details.Validate if user is able to create new property, if the application is preloaded with large volume of property details</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Regression</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+							<span class='label fail'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							<span class='label red lighten-1 white-text'>Failed: 3</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:25:40 PM</td>
+										<td class='linked' test-id='31'>Verify different actions like Add/list in</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2018 10:25:40 PM</td>
+										<td class='linked' test-id='33'>Verify different actions like Add/list in.Verify if the user is able to create and edit the property.Verify if the user is able to create and edit the property</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2018 10:26:18 PM</td>
+										<td class='linked' test-id='42'>Verify different actions like Add/list in.User should able to add new properties via API.User should able to add new properties via API</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2018 10:26:18 PM</td>
+										<td class='linked' test-id='50'>Verify different actions like Add/list in.Validate if user is able to create new property, if the application is preloaded with large volume of property details.Validate if user is able to create new property, if the application is preloaded with large volume of property details</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Verify_Add_new_page_displayed</span>
+						<span class='category-status right'>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:25:40 PM</td>
+										<td class='linked' test-id='33'>Verify different actions like Add/list in.Verify if the user is able to create and edit the property.Verify if the user is able to create and edit the property</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@ListProperty</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:26:03 PM</td>
+										<td class='linked' test-id='37'>Verify different actions like Add/list in.Verify if all the properties are listed in GUI</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@API</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:26:18 PM</td>
+										<td class='linked' test-id='42'>Verify different actions like Add/list in.User should able to add new properties via API.User should able to add new properties via API</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2018 10:26:18 PM</td>
+										<td class='linked' test-id='45'>Verify different actions like Add/list in.User should not create duplicate property</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@AddProperty</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:26:18 PM</td>
+										<td class='linked' test-id='42'>Verify different actions like Add/list in.User should able to add new properties via API.User should able to add new properties via API</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@AddDuplicateProperty</span>
+						<span class='category-status right'>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:26:18 PM</td>
+										<td class='linked' test-id='45'>Verify different actions like Add/list in.User should not create duplicate property</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@stress</span>
+						<span class='category-status right'>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:26:18 PM</td>
+										<td class='linked' test-id='50'>Verify different actions like Add/list in.Validate if user is able to create new property, if the application is preloaded with large volume of property details.Validate if user is able to create new property, if the application is preloaded with large volume of property details</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@AddPropertywith</span>
+						<span class='category-status right'>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:26:18 PM</td>
+										<td class='linked' test-id='50'>Verify different actions like Add/list in.Validate if user is able to create new property, if the application is preloaded with large volume of property details.Validate if user is able to create new property, if the application is preloaded with large volume of property details</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Stress</span>
+						<span class='category-status right'>
+							<span class='label fail'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 2</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:26:43 PM</td>
+										<td class='linked' test-id='57'>Verify different actions like Add/list in</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2018 10:26:43 PM</td>
+										<td class='linked' test-id='59'>Verify different actions like Add/list in.Validate if user is able to create new property, if the application is preloaded with large volume of property details.Validate if user is able to create new property, if the application is preloaded with large volume of property details</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@StressTestwithLargeData</span>
+						<span class='category-status right'>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2018 10:26:43 PM</td>
+										<td class='linked' test-id='59'>Verify different actions like Add/list in.Validate if user is able to create new property, if the application is preloaded with large volume of property details.Validate if user is able to create new property, if the application is preloaded with large volume of property details</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>junit.framework.AssertionFailedError</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>4</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Aug 24, 2018 10:25:51 PM</td>
+                                                        <td class='linked' test-id='36'>Verify different actions like Add/list in.Verify if the user is able to create and edit the property.Verify if the user is able to create and edit the property.Then Add New page should be displayed</td>
+                                                        <td><pre><pre>junit.framework.AssertionFailedError: Unable to locate element: //div[text()='Add Property']
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'LIVINGLEGEND', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_101'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 10436, moz:profile: C:\Users\Balaji\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 6.3, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 485eea1b-fc96-434a-86cb-b20cd0342220
+*** Element info: {Using=xpath, value=//div[text()='Add Property']}
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at stepdefnition.PropertyWorkflowmanagement.add_New_page_should_be_displayed(PropertyWorkflowmanagement.java:85)
+	at ?.Then Add New page should be displayed(02CreateEditListProperties.feature:8)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Aug 24, 2018 10:26:18 PM</td>
+                                                        <td class='linked' test-id='48'>Verify different actions like Add/list in.User should not create duplicate property.Then request should not be posted</td>
+                                                        <td><pre><textarea>junit.framework.AssertionFailedError: expected:<false> but was:<true>
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.failNotEquals(Assert.java:329)
+	at junit.framework.Assert.assertEquals(Assert.java:78)
+	at junit.framework.Assert.assertEquals(Assert.java:174)
+	at junit.framework.Assert.assertEquals(Assert.java:181)
+	at stepdefnition.Add_Edit_List.request_should_not_be_posted(Add_Edit_List.java:106)
+	at ?.Then request should not be posted(02CreateEditListProperties.feature:33)
+</textarea></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Aug 24, 2018 10:26:31 PM</td>
+                                                        <td class='linked' test-id='56'>Verify different actions like Add/list in.Validate if user is able to create new property, if the application is preloaded with large volume of property details.Validate if user is able to create new property, if the application is preloaded with large volume of property details.Then the property should be created</td>
+                                                        <td><pre><pre>junit.framework.AssertionFailedError: Unable to locate element: //td[contains(text(),'TestAutomation_20180824222629568')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'LIVINGLEGEND', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_101'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 11356, moz:profile: C:\Users\Balaji\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 6.3, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 8b3f6b42-57cc-4d38-a498-4f9246a8ca15
+*** Element info: {Using=xpath, value=//td[contains(text(),'TestAutomation_20180824222629568')]}
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at stepdefnition.PropertyWorkflowmanagement.the_property_should_be_created(PropertyWorkflowmanagement.java:122)
+	at ?.Then the property should be created(02CreateEditListProperties.feature:42)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Aug 24, 2018 10:26:56 PM</td>
+                                                        <td class='linked' test-id='65'>Verify different actions like Add/list in.Validate if user is able to create new property, if the application is preloaded with large volume of property details.Validate if user is able to create new property, if the application is preloaded with large volume of property details.Then the property should be created</td>
+                                                        <td><pre><pre>junit.framework.AssertionFailedError: Unable to locate element: //td[contains(text(),'TestAutomation_20180824222654504')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'LIVINGLEGEND', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_101'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 11496, moz:profile: C:\Users\Balaji\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 6.3, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 1ee4a9d5-7df8-4683-959a-108f5cd95bc7
+*** Element info: {Using=xpath, value=//td[contains(text(),'TestAutomation_20180824222654504')]}
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at stepdefnition.PropertyWorkflowmanagement.the_property_should_be_created(PropertyWorkflowmanagement.java:122)
+	at ?.Then the property should be created(03StressTesting.feature:11)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>3</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>9</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>48</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Aug 24, 2018 10:24:45 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Aug 24, 2018 10:27:08 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 2m 22s+878ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>user</td>
+								<td>Balaji</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@PropertyWorkFlowManagement</td>
+							<td>3</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@E2E</td>
+							<td>3</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@List_Create_Edit_Properties</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@CancelFunctionality</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@PropertyActions</td>
+							<td>1</td>
+							<td>3</td>
+							<td>0</td>
+							<td>
+									25%
+							</td>
+						</tr>
+						<tr>
+							<td>@Regression</td>
+							<td>1</td>
+							<td>3</td>
+							<td>0</td>
+							<td>
+									25%
+							</td>
+						</tr>
+						<tr>
+							<td>@Verify_Add_new_page_displayed</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@ListProperty</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@API</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									50%
+							</td>
+						</tr>
+						<tr>
+							<td>@AddProperty</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@AddDuplicateProperty</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@stress</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@AddPropertywith</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@Stress</td>
+							<td>0</td>
+							<td>2</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@StressTestwithLargeData</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<div id='testrunner-logs-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>TestRunner Logs</h5>
+		
+		<div class='card-panel'>
+				Property Management
+		</div>
+	</div>
+</div>
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 1,
+				failParent: 2,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 2,
+				
+				passChild: 5,
+				failChild: 4,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 4,
+				
+				passGrandChild: 44,
+				failGrandChild: 4,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 4,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 			
+      
+        $(document).ready(function() {
+          
+        });
+      
+		
+ 		</script>
+	</body>
+	
+</html>

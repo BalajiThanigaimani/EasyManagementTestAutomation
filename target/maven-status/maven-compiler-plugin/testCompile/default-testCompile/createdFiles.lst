@@ -1,0 +1,10 @@
+pageobjects\AddEditPropertyPage.class
+stepdefnition\PropertyWorkflowmanagement.class
+Core\Utils\GlobalCore.class
+executor\TestExecutor.class
+stepdefnition\Add_Edit_List.class
+ReusableFunctions\PropertyMgmt_API.class
+Core\Utils\Browsers.class
+pageobjects\PropertyManagementPage.class
+stepdefnition\Hooks.class
+ReusableFunctions\PropertyManagement.class
