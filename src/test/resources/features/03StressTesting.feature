@@ -1,5 +1,5 @@
 @Stress
-Feature: Verify different actions like Add/list in
+Feature: Preload Property details to do stress testing
 
 @StressTestwithLargeData
   Scenario Outline: Validate if user is able to create new property, if the application is preloaded with large volume of property details
