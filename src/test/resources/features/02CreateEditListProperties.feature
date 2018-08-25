@@ -2,7 +2,7 @@
 Feature: Verify different actions like Add/list in
 
 @Verify_Add_new_page_displayed 
-Scenario Outline: Verify if the user is able to create and edit the property
+Scenario Outline: Verify if Add new page is displayed
 Given the user open the Easy property Management application in <Browser>
 When the user clicks Add New Button
 Then Add New page should be displayed
