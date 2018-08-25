@@ -17,7 +17,8 @@ public class Browsers {
 		GlobalCore.driver = new FirefoxDriver(capabilities);
 		GlobalCore.driver.manage().window().maximize();
 		GlobalCore.driver.manage().timeouts().implicitlyWait(GlobalCore.BROWSER_TIMEOUT, TimeUnit.SECONDS);
-		GlobalCore.driver.get(GlobalCore.APP_URL);		
+		GlobalCore.driver.get(GlobalCore.APP_URL);
+		
 	}
 	
 	public static void ie_browser()
